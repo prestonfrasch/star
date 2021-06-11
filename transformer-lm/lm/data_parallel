@@ -1,0 +1,2 @@
+model = <specify model here>
+model = torch.nn.DataParallel(net, device_ids=range(torch.cuda.device_count()))

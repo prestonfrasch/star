@@ -1,0 +1,16 @@
+{
+    "argv": "/root/stargaze_env/bin/gpt-2 tests/shakespeare-test-run/ tests/shakespeare-encoded/ tests/shakespeare/sp-model.model --batch-size 8 --n-ctx 48 --n-embed 32 --n-hidden 16 --n-head 4 --n-layer 3 --only-validate",
+    "batch_size": 8,
+    "epochs": 10,
+    "g_accum_gradients": 1,
+    "hparams": {
+        "gradient_checkpointing": false,
+        "n_ctx": 48,
+        "n_embed": 32,
+        "n_head": 4,
+        "n_hidden": 16,
+        "n_layer": 3,
+        "n_vocab": 2000
+    },
+    "lr": 0.00025
+}

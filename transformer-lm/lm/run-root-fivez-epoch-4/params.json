@@ -1,0 +1,16 @@
+{
+    "argv": "/usr/local/bin/gpt-2 run-root-fivez data/encoded_training_set_nov_4/ sp-model-75k.model",
+    "batch_size": 1,
+    "epochs": 4,
+    "g_accum_gradients": 2,
+    "hparams": {
+        "gradient_checkpointing": false,
+        "n_ctx": 1024,
+        "n_embed": 384,
+        "n_head": 24,
+        "n_hidden": 384,
+        "n_layer": 10,
+        "n_vocab": 75000
+    },
+    "lr": 0.00025
+}
