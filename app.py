@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
+from wtforms.validators import DataRequired
 from flask_sqlalchemy import SQLAlchemy
 from os import environ
 
@@ -10,15 +11,31 @@ app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL') or 'sqlite:/
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-class UserRegForm(FlaskForm):
-	first_name = StringField("First name")
-	last_name = StringField("Last name")
-	submit_field = SubmitField("Register!")
+import forms
+
 
 @app.route('/', methods=['GET','POST'])
 def index():
 	if 'user' in request.form:
 		users.append(request.form['user'])
 	return render_template("index.html")
+
+@app.route('/enter_prompt/', methods=['GET','POST'])
+def enter_prompt():
+	form = Prompt(csrf_enabled=False)
+	if form.validate_on_submit():
+		prompt = form.submitted_prompt.data
+		return redirect(url_for("prompt_received", prompt=prompt)) 
+	return render_template("enter_prompt.html", template_form = form)
+#double check route
+#connect route to prompt form
+
+
+
+
+
+
+
+
 if __name__ == '__main__':
         app.run(host="0.0.0.0")
