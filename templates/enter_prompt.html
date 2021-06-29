@@ -1,5 +1,6 @@
-{% extends base.html %}
+{% extends "base.html" %}
 
 {% block content %}
-{{ form }}
+<p>{{ template_form.submitted_prompt }}</p>
+<p>{{ template_form.submit_field }}</p>
 {% endblock %}
