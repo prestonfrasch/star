@@ -14,13 +14,13 @@ session = Session()
 Base = declarative_base()
 
 class Book(Base):
-	__tablename__ = 'books'
+  __tablename__ = 'books'
 
-	id = Column(Integer, primary_key=True)
-	title = Column('Title', String)
-	author = Column('Author', String)
-	published_date = Column('Published', Date)
-	price = Column('Price', Integer)
+  id = Column(Integer, primary_key=True)
+  title = Column('Title', String)
+  author = Column('Author', String)
+  published_date = Column('Published', Date)
+  price = Column('Price', Integer)
 
-	def __repr__(self):
-		return f'<Title: {self.title} Author: self.author Published: {self.published_date} Price: {self.price}>'
+  def __repr__(self):
+    return f'<Title: {self.title} Author: self.author Published: {self.published_date} Price: {self.price}>'

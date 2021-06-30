@@ -11,7 +11,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL') or 'sqlite:/
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-import forms
+from forms import Prompt
 
 
 @app.route('/', methods=['GET','POST'])
