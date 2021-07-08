@@ -11,7 +11,7 @@ RUN pip3 install -U pip wheel
 RUN pip3 install https://download.pytorch.org/whl/cu100/torch-1.0.1.post2-cp36-cp36m-linux_x86_64.whl && \
     rm -r ~/.cache/pip
 
-WORKDIR /transformer-lm
+WORKDIR ~/
 
 COPY requirements.txt .
 RUN pip3 install awscli && \
@@ -20,3 +20,5 @@ RUN pip3 install awscli && \
 
 COPY . .
 RUN pip3 install -e .
+
+CMD ["python", "app.py"]
